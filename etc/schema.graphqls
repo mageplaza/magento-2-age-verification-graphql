@@ -1,0 +1,65 @@
+# Mageplaza
+#
+# NOTICE OF LICENSE
+#
+# This source file is subject to the Mageplaza.com license that is
+# available through the world-wide-web at this URL:
+# https://www.mageplaza.com/LICENSE.txt
+#
+# DISCLAIMER
+#
+# Do not edit or add to this file if you wish to upgrade this extension to newer
+# version in the future.
+#
+# @category    Mageplaza
+# @package     Mageplaza_AgeVerificationGraphQl
+# @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+# @license     https://www.mageplaza.com/LICENSE.txt
+
+type Query {
+    MpAgeVerificationCheck(
+        action: String! @doc(description: "Action type needs to be searched.")
+        productSku: String @doc(description: "Product Sku needs to be searched.")
+        categoryId: Int @doc(description: "Category Id needs to be searched.")
+        layoutId: String @doc(description: "Layout Id needs to be searched.")
+        cmsKey: String @doc(description: "Layout Id needs to be searched.")
+        includeUrl: String @doc(description: "Include Url needs to be searched.")
+        excludeUtl: String @doc(description: "Exclude Url needs to be searched.")
+    ):Boolean @resolver(class: "Mageplaza\\AgeVerificationGraphQl\\Model\\Resolver\\CheckNotify") @doc(description: "The query returns results based on the criteria specified in the filter.")
+    MpAgeVerificationGetConfig:MpAgeVerificationConfigOutput @resolver(class: "Mageplaza\\AgeVerificationGraphQl\\Model\\Resolver\\Config") @doc(description: "The query get data for Mageplaza Age Verification extension config.")
+}
+
+type MpAgeVerificationConfigOutput {
+    general: MpAgeVerificationGeneralConfigOutput,
+    purchase_verify: MpAgeVerificationPurchaseVerifyConfigOutput,
+    design: MpAgeVerificationPurchaseVerifyDesignOutput
+}
+type MpAgeVerificationGeneralConfigOutput {
+    enabled: Boolean @doc(description: "Is enabled"),
+    verify_age: Int @doc(description: "Verify age"),
+    enabled_term_condition: Boolean @doc(description: "Is enabled term condition"),
+    link_term: String @doc(description: "Link term"),
+    anchor_text: String @doc(description: "Anchor text"),
+    anchor_url: String @doc(description: "Anchor url"),
+    cookie_time: Int @doc(description: "Cookie time"),
+    auto_verify: Boolean @doc(description: "Is auto verify"),
+    redirect: String @doc(description: "Re-direct URL")
+}
+type MpAgeVerificationPurchaseVerifyConfigOutput {
+    notice_type: String @doc(description: "Notify type"),
+    image: String @doc(description: "Image link"),
+    enabled_term_condition: Boolean @doc(description: "Is enabled term condition"),
+    message: String @doc(description: "message")
+}
+type MpAgeVerificationPurchaseVerifyDesignOutput {
+    verify_type: Int @doc(description: "Verify type"),
+    image: String @doc(description: "Image link"),
+    title: String @doc(description: "Title"),
+    description: String @doc(description: "Description"),
+    confirm_label: String @doc(description: "Confirm label"),
+    cancel_label: String @doc(description: "Cancel label"),
+    title_bg: String @doc(description: "title bg"),
+    content_bg: String @doc(description: "Content bg"),
+    button_color: String @doc(description: "Button color"),
+    text_color: String @doc(description: "Text color")
+}
