@@ -56,9 +56,19 @@ class Config implements ResolverInterface
      */
     public function resolve(Field $field, $context, ResolveInfo $info, array $value = null, array $args = null)
     {
-        return $this->_helperData->getConfigValue(
+        $config = $this->_helperData->getConfigValue(
             Data::CONFIG_MODULE_PATH,
             $context->getExtensionAttributes()->getStore()->getId()
         );
+
+        if (!empty($config['purchase_verify']['image'])) {
+            $config['purchase_verify']['image'] = $this->_helperData->getImageNoticeUrl();
+        }
+
+        if (!empty($config['design']['image'])) {
+            $config['design']['image'] = $this->_helperData->getLogoPopupUrl();
+        }
+
+        return $config;
     }
 }

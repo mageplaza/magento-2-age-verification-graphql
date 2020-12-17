@@ -31,6 +31,7 @@ type Query {
 
 type MpAgeVerificationConfigOutput {
     general: MpAgeVerificationGeneralConfigOutput,
+    page_verify: MpAgeVerificationPageVerifyConfigOutput,
     purchase_verify: MpAgeVerificationPurchaseVerifyConfigOutput,
     design: MpAgeVerificationPurchaseVerifyDesignOutput
 }
@@ -42,13 +43,22 @@ type MpAgeVerificationGeneralConfigOutput {
     anchor_text: String @doc(description: "Anchor text"),
     anchor_url: String @doc(description: "Anchor url"),
     cookie_time: Int @doc(description: "Cookie time"),
+    customer_groups: String @doc(description: "Customer group ids"),
     auto_verify: Boolean @doc(description: "Is auto verify"),
     redirect: String @doc(description: "Re-direct URL")
+}
+type MpAgeVerificationPageVerifyConfigOutput {
+    apply_for: String @doc(description: "Customer group ids"),
+    apply_for_cms: String @doc(description: "Cms is apply"),
+    apply_for_category: String @doc(description: "Category is apply"),
+    enabled_condition: Boolean @doc(description: "Is enable condition"),
+    include_pages: String @doc(description: "Page is apply"),
+    exclude_pages: String @doc(description: "Page is not apply")
 }
 type MpAgeVerificationPurchaseVerifyConfigOutput {
     notice_type: String @doc(description: "Notify type"),
     image: String @doc(description: "Image link"),
-    enabled_term_condition: Boolean @doc(description: "Is enabled term condition"),
+    enabled: Boolean @doc(description: "Is enabled term condition"),
     message: String @doc(description: "message")
 }
 type MpAgeVerificationPurchaseVerifyDesignOutput {
