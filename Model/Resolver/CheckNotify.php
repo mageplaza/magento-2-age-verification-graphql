@@ -90,11 +90,11 @@ class CheckNotify implements ResolverInterface
     public function resolve(Field $field, $context, ResolveInfo $info, array $value = null, array $args = null)
     {
         $object = $this->validateArgsPage($args, $context);
-        if ($context->getExtensionAttributes()->getIsCustomer() === false) {
-            $groupId = 0;
-        } else {
+        if ($context->getExtensionAttributes()->getIsCustomer() !== false) {
             $customer = $this->getCustomer->execute($context);
             $groupId  = $customer->getGroupId();
+        } else {
+            $groupId = 0;
         }
         $storeId = $context->getExtensionAttributes()->getStore()->getId();
 
@@ -174,7 +174,7 @@ class CheckNotify implements ResolverInterface
                     throw new GraphQlInputException(__('Exclude url key is not empty'));
                 }
                 break;
-            case 'category_id':
+            case 'category':
                 if (isset($args['categoryId'])) {
                     try {
                         return $this->categoryRepository->get(
