@@ -119,7 +119,7 @@ class CheckNotify implements ResolverInterface
             case 'cms':
                 return in_array(
                     $args['cmsKey'],
-                    $this->_helperData->getApplyForCms($storeId),
+                    explode(',', $this->_helperData->getApplyForCms($storeId)),
                     true
                 );
             case 'include':
