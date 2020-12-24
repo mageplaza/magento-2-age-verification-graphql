@@ -17,16 +17,15 @@
 # @license     https://www.mageplaza.com/LICENSE.txt
 
 type Query {
-    MpAgeVerificationCheck(
-        action: String! @doc(description: "Action type needs to be searched.")
-        productSku: String @doc(description: "Product Sku needs to be searched.")
-        categoryId: Int @doc(description: "Category Id needs to be searched.")
-        layoutId: String @doc(description: "Layout Id needs to be searched.")
-        cmsKey: String @doc(description: "Layout Id needs to be searched.")
-        includeUrl: String @doc(description: "Include Url needs to be searched.")
-        excludeUtl: String @doc(description: "Exclude Url needs to be searched.")
-    ):Boolean @resolver(class: "Mageplaza\\AgeVerificationGraphQl\\Model\\Resolver\\CheckNotify") @doc(description: "The query returns results based on the criteria specified in the filter.")
     MpAgeVerificationGetConfig:MpAgeVerificationConfigOutput @resolver(class: "Mageplaza\\AgeVerificationGraphQl\\Model\\Resolver\\Config") @doc(description: "The query get data for Mageplaza Age Verification extension config.")
+}
+
+interface ProductInterface {
+    mp_age_verification: MpAgeVerificationProductOutput @resolver(class: "Mageplaza\\AgeVerificationGraphQl\\Model\\Resolver\\Product") @doc(description: "Product age verification information.")
+}
+
+interface CategoryInterface {
+    mp_age_verification: Boolean @resolver(class: "Mageplaza\\AgeVerificationGraphQl\\Model\\Resolver\\Category") @doc(description: "Is age verification.")
 }
 
 type MpAgeVerificationConfigOutput {
@@ -72,4 +71,8 @@ type MpAgeVerificationPurchaseVerifyDesignOutput {
     content_bg: String @doc(description: "Content bg"),
     button_color: String @doc(description: "Button color"),
     text_color: String @doc(description: "Text color")
+}
+type MpAgeVerificationProductOutput {
+    mp_age_verification: Boolean @doc(description: "Is age verification."),
+    image: String @doc(description: "Image link")
 }
