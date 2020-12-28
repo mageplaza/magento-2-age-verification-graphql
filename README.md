@@ -1,6 +1,6 @@
-# Magento 2 Age Verification GraphQl/PWA
+# Magento Age Verification GraphQl
 
-Magento 2 Age Verification GraphQl is a part of Age Verification extension that add GraphQL features, this support for PWA Studio.
+Magento Age Verification GraphQl is a part of Age Verification extension that add GraphQL features, this support for PWA Studio.
 ## 1. How to install
 
 Run the following command in Magento 2 root folder:
@@ -12,7 +12,7 @@ php bin/magento setup:static-content:deploy
 ```
 
 **Note:**
-Magento 2 Age Verification GraphQL requires installing [Mageplaza Age Verification](https://www.mageplaza.com/magento-2-age-verification/) in your Magento installation.
+Age Verification GraphQL requires installing [Mageplaza Age Verification](https://www.mageplaza.com/magento-2-age-verification/) in your Magento installation.
 
 ## 2. How to use
 
