@@ -36,8 +36,8 @@ To perform GraphQL queries in Magento, please do the following requirements:
 
 ## 3. Devdocs
 
-- [Rest API & examples](https://documenter.getpostman.com/view/10589000/TVK76LAL)
-- [GraphQL & examples](https://documenter.getpostman.com/view/10589000/TVssi8Bj)
+- [Magento 2 Age Verification Rest API & examples](https://documenter.getpostman.com/view/10589000/TVK76LAL)
+- [Magento 2 Age Verification GraphQL & examples](https://documenter.getpostman.com/view/10589000/TVssi8Bj)
 
 ## 4. Contribute to this module
 
