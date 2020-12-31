@@ -47,4 +47,4 @@ You can create a pull request so we will merge your changes main branch.
 ## 5. Get Support
 
 - Feel free to [contact us](https://www.mageplaza.com/contact.html) if you have any further questions. Our support team is always here to listen to you and solve your problems. 
-- Like this project, Give us a **Star** ![star](https://i.imgur.com/S8e0ctO.png)
+- if you find this project helpful, please give us a **Star** ![star](https://i.imgur.com/S8e0ctO.png)
