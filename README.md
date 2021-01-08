@@ -1,4 +1,4 @@
-# Magento Age Verification GraphQl
+# Magento Age Verification GraphQL
 
 **Magento Age Verification GraphQL is now a part of the Mageplaza Age Verification extension that adds GraphQL features. This supports PWA Studio.**  
 
